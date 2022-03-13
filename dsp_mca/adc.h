@@ -1,5 +1,12 @@
+#ifndefine _ADC_H
+#define ADC_input_port
+#define ADC_input_pin			
+#define ADC_Channel
+#include <stm32f4xx.h>
+
 #define ADC_ADDR 0x00005000 
 #define LED_ADDR 0x00005020
+
 int main (void){
     volatile int * adc = (int*)(ADC_ADDR); 
     volatile int * led = (int*)(LED_ADDR); unsigned int data;
@@ -19,3 +26,4 @@ int main (void){
 }
       }
 return 0; }
+#endif
